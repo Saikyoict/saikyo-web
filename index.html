@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西教信通株式会社 | Saikyo ICT Co., Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-900">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-11 h-11">
+                    <circle cx="50" cy="50" r="48" stroke="url(#paint0_linear)" stroke-width="4"/>
+                    
+                    <path d="M50 10V90M10 50H90M15 30C25 35 35 40 50 40C65 40 75 35 85 30M15 70C25 65 35 60 50 60C65 60 75 65 85 70" stroke="#059669" stroke-width="1.5" opacity="0.4"/>
+                    <path d="M30 15C35 25 40 35 40 50C40 65 35 75 30 85M70 15C65 25 60 35 60 50C60 65 65 75 70 85" stroke="#059669" stroke-width="1.5" opacity="0.4"/>
+                    
+                    <path d="M30 25H70M50 25V75M35 45L50 60L65 45M35 55L50 70L65 55" stroke="url(#paint1_linear)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#059669"/> <stop offset="1" stop-color="#1E3A8A"/> </linearGradient>
+                        <linearGradient id="paint1_linear" x1="50" y1="25" x2="50" y2="75" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#059669"/>
+                            <stop offset="1" stop-color="#1E3A8A"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold text-blue-900 leading-tight">西教信通株式会社</h1>
+                <p class="text-[9px] tracking-[0.2em] text-gray-400 uppercase">Saikyo ICT Co., Ltd.</p>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <button onclick="switchLang('jp')" id="btn-jp" class="lang-btn active">日本語</button>
+            <span class="text-gray-300">|</span>
+            <button onclick="switchLang('cn')" id="btn-cn" class="lang-btn">中文</button>
+        </div>
+    </div>
+</header>
+
+
+    <section class="tech-gradient text-white py-24 px-6">
+        <div class="container mx-auto">
+            <div class="lang-content-jp">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight text-blue-400">プロフェッショナルな技術で、<br>次世代の社会価値を創造する。</h2>
+                <p class="text-lg opacity-90 max-w-4xl border-l-4 border-blue-400 pl-6 leading-relaxed">
+                    代表・<span class="text-xl font-bold text-blue-300">劉 琦</span>は、北京郵電大学修士、元国家電網シニアエンジニアとして、20年にわたる知見と特許技術を基盤に高度なソリューションを提供します。
+                </p>
+            </div>
+            <div class="lang-content-cn lang-hidden">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-8 leading-tight text-blue-400">以专业技术底蕴，<br>创造跨时代的社会价值。</h2>
+                <p class="text-lg opacity-90 max-w-4xl border-l-4 border-blue-400 pl-6 leading-relaxed">
+                    代表・<span class="text-xl font-bold text-blue-300">刘琦</span>，北京邮电大学硕士，原国家电网公司高级工程师。凭借20年电力通信实战经验与核心专利发明，提供专家级技术支持。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white border-b">
+        <div class="container mx-auto px-6 text-center">
+            <div class="jp-text">
+                <h3 class="text-sm tracking-[0.3em] text-gray-400 mb-4 uppercase">Corporate Philosophy</h3>
+                <p class="text-2xl font-bold text-blue-900">誠実 ・ 革新 ・ 共生</p>
+            </div>
+            <div class="cn-text lang-hidden">
+                <h3 class="text-sm tracking-[0.3em] text-gray-400 mb-4 uppercase">经营理念</h3>
+                <p class="text-2xl font-bold text-blue-900">诚信 ・ 创新 ・ 共生</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white rounded-2xl vision-card border-t-4 border-blue-900">
+                <h4 class="font-bold text-lg mb-4 text-blue-900 jp-text text-center">ICT・電力通信コンサルティング</h4>
+                <h4 class="font-bold text-lg mb-4 text-blue-900 cn-text lang-hidden text-center">ICT及电力通信技术咨询</h4>
+                <p class="text-xs text-gray-600 leading-relaxed jp-text"><b>日本および中国の両国企業・ユーザー</b>を対象に、電力通信、特高圧、再エネ分野における専門的なコンサルティングサービスを実直に展開しています。</p>
+                <p class="text-xs text-gray-600 leading-relaxed cn-text lang-hidden">面向<b>中日两国企业及用户</b>，提供电力通信、特高压、新能源等领域的专业咨询服务。立足现有核心业务，务实解决技术对标课题。</p>
+            </div>
+            <div class="p-8 bg-white rounded-2xl vision-card border-t-4 border-blue-400">
+                <h4 class="font-bold text-lg mb-4 text-blue-900 jp-text text-center">次世代社会システム研究開発</h4>
+                <h4 class="font-bold text-lg mb-4 text-blue-900 cn-text lang-hidden text-center">下一代社会系统研发</h4>
+                <p class="text-xs text-gray-600 leading-relaxed jp-text">デジタルツイン技術等を活用し、<b>日本全国をカバーする</b>高齢者とペットの共生ケアモデルの構築に向けたプロジェクトを推進しています。</p>
+                <p class="text-xs text-gray-600 leading-relaxed cn-text lang-hidden">利用数字孪生与大数据技术，计划在<b>日本全国范围内</b>推广老人与宠物的人文关怀共生模式，打造下一代智能化社会系统。</p>
+            </div>
+            <div class="p-8 bg-white rounded-2xl vision-card border-t-4 border-green-700">
+                <h4 class="font-bold text-lg mb-4 text-blue-900 jp-text text-center">資産運用・バリューアップ</h4>
+                <h4 class="font-bold text-lg mb-4 text-blue-900 cn-text lang-hidden text-center">资产运作与价值提升</h4>
+                <p class="text-xs text-gray-600 leading-relaxed jp-text">事業を通じて得られた資金を、<b>日本国内の資産へ再投入・管理</b>することで、中長期的な企業価値の最大化と安定した財務基盤を構築します。</p>
+                <p class="text-xs text-gray-600 leading-relaxed cn-text lang-hidden">将业务获得的资金投入至<b>日本本土优质资产及管理</b>中，通过战略性资产运作，实现价值长期增值并确保公司财务稳健。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 container mx-auto px-6 border-t border-slate-200">
+        <h4 class="text-xs font-bold text-blue-900 mb-6 uppercase tracking-widest">What's New</h4>
+        <div class="text-[11px] space-y-3 leading-relaxed">
+            <p><span class="text-gray-400 mr-4">2025.12.01</span> 
+                <span class="jp-text">公式ウェブサイトを公開いたしました。</span>
+                <span class="cn-text lang-hidden">官方网站正式发布。</span>
+            </p>
+            <p><span class="text-gray-400 mr-4">2025.11.15</span> 
+                <span class="jp-text">役員変更および住所変更の登記を完了いたしました。</span>
+                <span class="cn-text lang-hidden">完成公司董事及住所变更登记。</span>
+            </p>
+            <p><span class="text-gray-400 mr-4">2025.05.09</span> 
+                <span class="jp-text">西教信通株式会社、大阪にて設立。</span>
+                <span class="cn-text lang-hidden">西教信通株式会社在大阪正式成立。</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h3 class="text-3xl font-bold mb-10 jp-text">お問い合わせ</h3>
+            <h3 class="text-3xl font-bold mb-10 cn-text lang-hidden">联系我们</h3>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                    <p class="text-blue-400 text-xs font-bold uppercase mb-4">Location</p>
+                    <p class="text-sm leading-relaxed">大阪市中央区松屋町9番20号<br>ローレルステート松屋町402A</p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                    <p class="text-blue-400 text-xs font-bold uppercase mb-4">Contact Info</p>
+                    <p class="text-sm mb-2 font-mono">Email: <a href="mailto:Saikyoict@outlook.com" class="hover:text-blue-300">Saikyoict@outlook.com</a></p>
+                    <p class="text-sm font-mono text-gray-300">Tel: 070-2267-7216</p>
+                    <p class="text-[10px] mt-6 text-gray-400 jp-text">※専門相談は、まずメールまたはお電話にてご連絡ください。</p>
+                    <p class="text-[10px] mt-6 text-gray-400 cn-text lang-hidden">※专业咨询请先通过邮件或电话联系。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black text-gray-500 text-center text-[10px] tracking-widest">
+        <p>© 2026 Saikyo ICT Co., Ltd. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
