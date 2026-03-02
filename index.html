@@ -10,21 +10,19 @@
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f1f5f9; font-size: 14px; }
         .lang-hidden { display: none !important; }
         .hero-gradient { background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%); }
-        
-        /* 统一卡片风格：第一、二、三部分全部对齐 */
         .uniform-card { 
             background: rgba(255, 255, 255, 0.98); 
             border-radius: 12px; 
             padding: 24px; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        
-        /* 统一标题风格 */
         .section-title { position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 24px; font-weight: 700; color: #ffffff; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 35px; height: 3px; background: #10b981; border-radius: 2px; }
-        
-        .list-dot { width: 5px; height: 5px; background-color: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; margin-bottom: 2px; }
+        .fee-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 9px; color: #64748b; border-top: 1px solid #f1f5f9; pt-3; mt-auto; }
     </style>
 </head>
 <body class="antialiased">
@@ -65,23 +63,32 @@
             <h3 class="text-lg section-title jp-text">1. 電力・情報通信コンサルティング</h3>
             <h3 class="text-lg section-title cn-text lang-hidden">1. 电力与信息通信工程技术咨询</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">工程技術相談</h4>
-                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">工程技术咨询</h4>
-                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">代表の保有する発明特許と国家電網での実績に基づき、最適なシステム設計案を提供します。</p>
-                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">依托创始人拥有的发明专利及国家电网项目经验，提供最优系统设计方案。</p>
+                <div class="uniform-card min-h-[220px]">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-2 jp-text">工程技術相談</h4>
+                        <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">工程技术咨询</h4>
+                        <p class="text-[12px] leading-relaxed text-slate-600 jp-text">代表の保有する発明特许と国家電網での実績に基づき、最適なシステム設計案を提供します。</p>
+                        <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">依托创始人拥有的发明专利及国家电网项目经验，提供最优系统设计方案。</p>
+                    </div>
+                    <div class="fee-tag pt-3 mt-4">Consulting: 10,000 JPY / Hr~</div>
                 </div>
-                <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">技術交流と伝播</h4>
-                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">技术交流与传播</h4>
-                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">中国電機工程学会シニア会員として、中日間の高度な技術者交流を促進します。</p>
-                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">利用中国电力工程学会高级会员身份，促进中日间高层次技术人员交流。</p>
+                <div class="uniform-card min-h-[220px]">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-2 jp-text">技術交流と伝播</h4>
+                        <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">技术交流与传播</h4>
+                        <p class="text-[12px] leading-relaxed text-slate-600 jp-text">中国電機工程学会シニア会員として、中日間の高度な技術者交流を促進します。</p>
+                        <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">利用中国电力工程学会高级会员身份，促进中日间高层次技术人员交流。</p>
+                    </div>
+                    <div class="fee-tag pt-3 mt-4">Seminar Fee: 100,000 JPY~</div>
                 </div>
-                <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">標準研究と審査</h4>
-                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">标准研究与评审</h4>
-                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">電力通信規格の専門知識を背景に、第三者視点での技術評価と審査を行います。</p>
-                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">凭借电力通信标准领域的专业知识，提供第三方技术评估与评审服务。</p>
+                <div class="uniform-card min-h-[220px]">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-2 jp-text">標準研究と審査</h4>
+                        <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">标准研究与评审</h4>
+                        <p class="text-[12px] leading-relaxed text-slate-600 jp-text">電力通信規格の専門知識を背景に、第三者視点での技術評価と審査を行います。</p>
+                        <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">凭借电力通信标准领域的专业知识，提供第三方技术评估与评审服务。</p>
+                    </div>
+                    <div class="fee-tag pt-3 mt-4">Report Fee: 200,000 JPY~</div>
                 </div>
             </div>
         </div>
@@ -90,10 +97,12 @@
             <h3 class="text-lg section-title jp-text">2. 次世代ソーシャル・プラットフォーム</h3>
             <h3 class="text-lg section-title cn-text lang-hidden">2. 下一代社会福祉与人文关怀平台</h3>
             <div class="uniform-card bg-emerald-50/50 border-emerald-100">
-                <h4 class="font-bold text-emerald-700 mb-3 jp-text">「感性モデル」による社会課題解決</h4>
-                <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">基于“感性模型”的社会课题解决</h4>
-                <p class="text-[12px] leading-relaxed text-slate-600 mb-6 jp-text">デジタルツイン技術と行動データ分析を活用し、高齢化社会における心理的孤立を科学的に解消。地域パートナーへ「標準実行モデル」を提供します。</p>
-                <p class="text-[12px] leading-relaxed text-slate-600 mb-6 cn-text lang-hidden">利用数字孪生技术与行为数据分析，科学化解决老龄化社会中的心理孤立问题，并向合作伙伴输出标准执行模型。</p>
+                <div>
+                    <h4 class="font-bold text-emerald-700 mb-3 jp-text">「感性モデル」による社会課題解決</h4>
+                    <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">基于“感性模型”的社会课题解决</h4>
+                    <p class="text-[12px] leading-relaxed text-slate-600 mb-6 jp-text">デジタルツイン技術と行動データ分析を活用し、高齢化社会における心理的孤立を科学的に解消。地域パートナーへ「標準実行モデル」を提供します。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 mb-6 cn-text lang-hidden">利用数字孪生技术与行为数据分析，科学化解决老龄化社会中的心理孤立问题，并向合作伙伴输出标准执行模型。</p>
+                </div>
                 <div class="bg-white/60 p-4 rounded border border-emerald-100">
                     <p class="text-[9px] uppercase tracking-widest text-emerald-600 font-bold mb-2">Service Fees</p>
                     <p class="text-[10px] text-slate-500 jp-text">システム導入・保守：100,000円〜 / 月（ライセンス料別途）</p>
@@ -106,19 +115,23 @@
             <h3 class="text-lg section-title jp-text">3. 戦略的投資と人材育成</h3>
             <h3 class="text-lg section-title cn-text lang-hidden">3. 战略性投资与人才培养</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-3 jp-text">優良資産への投資</h4>
-                    <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">优良资产投资</h4>
-                    <p class="text-[12px] text-slate-600 mb-4 jp-text">国内外の優良成長資産に対し、専門的な知見を持って資産配置を行っています。</p>
-                    <p class="text-[12px] text-slate-600 mb-4 cn-text lang-hidden">凭借专业见解，对国内外优质成长型资产进行战略性配置。</p>
-                    <p class="text-[9px] text-slate-400 font-mono">DD Fee: 300,000 JPY~</p>
+                <div class="uniform-card min-h-[180px]">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-3 jp-text">優良資産への投資</h4>
+                        <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">优良资产投资</h4>
+                        <p class="text-[12px] text-slate-600 mb-4 jp-text">国内外の優良成長資産に対し、専門的な知見を持って資産配置を行っています。</p>
+                        <p class="text-[12px] text-slate-600 mb-4 cn-text lang-hidden">凭借专业见解，对国内外优质成长型资产进行战略性配置。</p>
+                    </div>
+                    <div class="fee-tag pt-3 mt-4">DD Fee: 300,000 JPY~</div>
                 </div>
-                <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-3 jp-text">多分野の人材育成</h4>
-                    <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">多领域人才培养</h4>
-                    <p class="text-[12px] text-slate-600 mb-4 jp-text">次世代インフラおよび社会課題解決に精通した実務型専門家を育成します。</p>
-                    <p class="text-[12px] text-slate-600 mb-4 cn-text lang-hidden">培养深谙下一代基础设施与社会课题解决的实务型专家。</p>
-                    <p class="text-[9px] text-slate-400 font-mono">Curriculum Fee: 500,000 JPY~</p>
+                <div class="uniform-card min-h-[180px]">
+                    <div>
+                        <h4 class="font-bold text-emerald-700 mb-3 jp-text">多分野の人材育成</h4>
+                        <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">多领域人才培养</h4>
+                        <p class="text-[12px] text-slate-600 mb-4 jp-text">次世代インフラおよび社会課題解決に精通した実务型専門家を育成します。</p>
+                        <p class="text-[12px] text-slate-600 mb-4 cn-text lang-hidden">培养深谙下一代基础设施与社会课题解决的实务型专家。</p>
+                    </div>
+                    <div class="fee-tag pt-3 mt-4">Curriculum Fee: 500,000 JPY~</div>
                 </div>
             </div>
         </div>
@@ -132,7 +145,6 @@
                 <p>代表取締役：劉 琦 | 資本金：5,000,000円</p>
                 <p class="font-mono mt-2">Contact: Saikyoict@outlook.com</p>
             </div>
-            
             <p class="text-[8px] text-slate-800 font-mono mb-4 uppercase tracking-widest">© 2025 SAIKYO ICT CO., LTD. ALL RIGHTS RESERVED.</p>
             <button onclick="document.getElementById('tokusho').style.display='flex'" class="text-[8px] text-slate-700 underline underline-offset-2">特定商取引法に基づく表記</button>
         </div>
