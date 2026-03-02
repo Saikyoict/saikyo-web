@@ -10,14 +10,15 @@
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
         .lang-hidden { display: none !important; }
         .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .section-title { position: relative; display: inline-block; padding-bottom: 8px; }
-        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60%; height: 4px; background: #10b981; border-radius: 2px; }
-        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .section-title { position: relative; display: inline-block; padding-bottom: 12px; margin-bottom: 40px; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 4px; background: #10b981; border-radius: 2px; }
+        .business-card { background: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; transition: all 0.3s ease; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05); }
+        .business-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border-color: #10b981; }
     </style>
 </head>
-<body class="bg-white text-slate-800">
+<body class="bg-slate-50 text-slate-800">
 
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10">
@@ -32,161 +33,183 @@
                     <p class="text-[9px] tracking-widest text-slate-400 uppercase font-bold mt-1">Saikyo ICT Co., Ltd.</p>
                 </div>
             </div>
-            <nav class="hidden md:flex space-x-8 text-xs font-bold text-slate-600">
-                <a href="#services" class="hover:text-emerald-600">SERVICES</a>
-                <a href="#about" class="hover:text-emerald-600">ABOUT</a>
-                <a href="#contact" class="hover:text-emerald-600">CONTACT</a>
-            </nav>
             <div class="flex bg-slate-100 rounded-full p-1 shadow-inner scale-90">
-                <button id="btn-jp" onclick="setLang('jp')" class="px-3 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700">JP</button>
-                <button id="btn-cn" onclick="setLang('cn')" class="px-3 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400">CN</button>
+                <button id="btn-jp" onclick="setLang('jp')" class="px-4 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700">日本語</button>
+                <button id="btn-cn" onclick="setLang('cn')" class="px-4 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400">中文</button>
             </div>
         </div>
     </header>
 
-    <section class="hero-bg text-white py-24 px-6 overflow-hidden relative">
-        <div class="container mx-auto max-w-5xl">
+    <section class="hero-bg text-white py-24 px-6 relative overflow-hidden">
+        <div class="container mx-auto max-w-5xl relative z-10">
             <div class="jp-text">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">ICT技術と専門知見で、<br><span class="text-emerald-400">次世代の社会インフラ</span>を支える。</h2>
-                <p class="text-slate-400 max-w-2xl leading-relaxed mb-8">西教信通株式会社は、電力通信分野における20年以上の経験と特許技術をコアに、日本市場における高度なICTソリューションと中日間の技術ブリッジを提供します。</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">ICTと専門知見で、<br><span class="text-emerald-400">社会インフラの未来</span>を支える。</h2>
+                <p class="text-slate-400 max-w-2xl leading-relaxed text-sm md:text-base">代表・劉 琦は、北京郵電大学で修士号を取得し、元国家電網のシニアエンジニアとして20年以上の電力通信キャリア経験と特許技術を有しています。その専門性を活かし、日本市場における高度なICTソリューションを提供します。</p>
             </div>
             <div class="cn-text lang-hidden">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">以ICT技术与专业造诣，<br><span class="text-emerald-400">支撑下一代社会基础设施</span>。</h2>
-                <p class="text-slate-400 max-w-2xl leading-relaxed mb-8">西教信通株式会社以电力通信领域20余年的经验与专利技术为核心，提供面向日本市场的高端ICT解决方案及中日间的技术桥梁服务。</p>
-            </div>
-            <a href="#contact" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-full font-bold text-sm transition shadow-lg shadow-emerald-900/20">Contact Now</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold section-title jp-text">事業内容</h3>
-                <h3 class="text-2xl font-bold section-title cn-text lang-hidden">业务内容</h3>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 card-hover">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-                    </div>
-                    <h4 class="text-lg font-bold mb-4 jp-text">ICT受託開発・DX支援</h4>
-                    <h4 class="text-lg font-bold mb-4 cn-text lang-hidden">ICT受托开发与DX支持</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 jp-text">
-                        次世代介護施設向け見守りシステム、高精度な在庫管理プラットフォーム、およびデジタルツイン技術の実装支援。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考価格：500,000円〜</span>
-                    </p>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 cn-text lang-hidden">
-                        面向下一代养老机构的监护系统、高精度库存管理平台，以及基于数字孪生技术的前沿应用开发支持。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考价格：500,000日元起</span>
-                    </p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 card-hover">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <h4 class="text-lg font-bold mb-4 jp-text">技術コンサルティング</h4>
-                    <h4 class="text-lg font-bold mb-4 cn-text lang-hidden">专家技术咨询</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 jp-text">
-                        電力通信の標準化、再エネ分野の日中技術対比。元国家電網の知見に基づく専門アドバイザリー。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考価格：10,000円 / 1時間あたり</span>
-                    </p>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 cn-text lang-hidden">
-                        电力通信标准化对标、新能源领域的中日技术合作咨询。基于原国家电网背景的专家建议。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考价格：10,000日元起 / 每小时</span>
-                    </p>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 card-hover">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h4 class="text-lg font-bold mb-4 jp-text">資産運用管理・コンサル</h4>
-                    <h4 class="text-lg font-bold mb-4 cn-text lang-hidden">资产管理与咨询</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 jp-text">
-                        日本国内における不動産・設備投資の最適化、および事業継承・経営戦略の策定支援。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考価格：個別見積もり</span>
-                    </p>
-                    <p class="text-slate-500 text-xs leading-relaxed mb-6 cn-text lang-hidden">
-                        针对日本国内不动产及设备投资的优化建议，以及企业继承与经营战略的策划支持。
-                        <br><span class="text-emerald-600 font-bold block mt-2">参考价格：根据个案评估报价</span>
-                    </p>
-                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">以ICT技术与专业造诣，<br><span class="text-emerald-400">支撑社会基础设施</span>的未来。</h2>
+                <p class="text-slate-400 max-w-2xl leading-relaxed text-sm md:text-base">代表·刘琦，北京邮电大学硕士，原国家电网高级工程师。凭借20余年电力通信领域从业经验及多项专利技术，为日本市场提供专家级ICT解决方案。</p>
             </div>
         </div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
     </section>
 
-    <section id="about" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h3 class="text-2xl font-bold section-title mb-12 jp-text text-center block">会社概要</h3>
-            <h3 class="text-2xl font-bold section-title mb-12 cn-text lang-hidden text-center block">公司概要</h3>
-            <div class="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50">
-                <div class="grid grid-cols-1 gap-6 text-sm">
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">商号</span><span class="text-slate-400 font-bold cn-text lang-hidden">商号</span>
-                        <span class="text-slate-900 font-bold">西教信通株式会社</span>
+    <section class="py-24 container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl font-bold section-title jp-text">主要事業</h3>
+            <h3 class="text-3xl font-bold section-title cn-text lang-hidden">核心业务</h3>
+        </div>
+
+        <div class="grid grid-cols-1 gap-12">
+            <div class="business-card">
+                <div class="flex flex-col md:flex-row md:items-start gap-8">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                     </div>
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">本店所在地</span><span class="text-slate-400 font-bold cn-text lang-hidden">地址</span>
-                        <span class="text-slate-900 font-bold text-right text-xs">〒542-0067 大阪府大阪市中央区松屋町9-20<br>ローレルステート松屋町402A</span>
-                    </div>
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">代表者</span><span class="text-slate-400 font-bold cn-text lang-hidden">法人代表</span>
-                        <span class="text-slate-900 font-bold">劉 琦</span>
-                    </div>
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">資本金</span><span class="text-slate-400 font-bold cn-text lang-hidden">资本金</span>
-                        <span class="text-slate-900 font-bold">5,000,000円</span>
-                    </div>
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">設立</span><span class="text-slate-400 font-bold cn-text lang-hidden">成立时间</span>
-                        <span class="text-slate-900 font-bold">2025年5月</span>
-                    </div>
-                    <div class="flex border-b border-slate-100 pb-4 justify-between items-center">
-                        <span class="text-slate-400 font-bold jp-text">主要取引銀行</span><span class="text-slate-400 font-bold cn-text lang-hidden">开户银行</span>
-                        <span class="text-slate-900 font-bold">PayPay銀行（申請中）</span>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 jp-text text-slate-900">1. 次世代ICTソリューション・システム受託開発</h4>
+                        <h4 class="text-2xl font-bold mb-4 cn-text lang-hidden text-slate-900">1. 下一代ICT解决方案与系统受托开发</h4>
+                        
+                        <div class="jp-text text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>最先端のICT技術とデジタルツイン（Digital Twin）を活用し、社会課題の解決に貢献します。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>スマート介護支援：</strong> 介護施設向けの見守りシステムやAIを活用した健康管理プラットフォームの開発。</li>
+                                <li><strong>エンタープライズDX：</strong> 中小企業向けの高精度在庫管理システムや、業務効率化を実現するカスタムソフトウェアの構築。</li>
+                                <li><strong>デジタルツイン：</strong> 物理空間の情報をデジタル上に再現し、シミュレーションや最適化を行う高度な技術実装。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考料金：システム要件定義 15万円〜 / 受託開発 50万円〜</p>
+                        </div>
+                        
+                        <div class="cn-text lang-hidden text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>利用前沿ICT技术与数字孪生（Digital Twin）技术，致力于解决社会痛点问题。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>智慧养老支援：</strong> 开发面向养老机构的监护系统及基于AI的健康管理平台。</li>
+                                <li><strong>企业级DX赋能：</strong> 为中小企业构建高精度库存管理系统及实现业务流程自动化的定制软件。</li>
+                                <li><strong>数字孪生应用：</strong> 将物理空间信息数字化，进行高精度的模拟仿真与方案优化。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考价格：需求定义 15万日元起 / 系统开发 50万日元起</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="contact" class="py-24 bg-white px-6">
-        <div class="container mx-auto max-w-2xl text-center">
-            <h3 class="text-2xl font-bold mb-8 jp-text">お問い合わせ</h3>
-            <h3 class="text-2xl font-bold mb-8 cn-text lang-hidden">联系我们</h3>
-            <p class="text-slate-500 mb-8 text-sm jp-text">ビジネスに関するご相談は、以下の連絡先までお気軽にお問い合わせください。</p>
-            <p class="text-slate-500 mb-8 text-sm cn-text lang-hidden">如有业务合作咨询，欢迎通过以下方式联系我们。</p>
-            <div class="space-y-4">
-                <a href="mailto:Saikyoict@outlook.com" class="block bg-slate-900 text-white p-4 rounded-2xl font-bold hover:bg-slate-800 transition">Saikyoict@outlook.com</a>
-                <p class="text-slate-900 font-bold text-lg">Tel: 070-2267-7216</p>
+            <div class="business-card">
+                <div class="flex flex-col md:flex-row md:items-start gap-8">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 jp-text text-slate-900">2. 技術・経営コンサルティング（中日ブリッジ）</h4>
+                        <h4 class="text-2xl font-bold mb-4 cn-text lang-hidden text-slate-900">2. 技术与经营咨询（中日合作桥梁）</h4>
+                        
+                        <div class="jp-text text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>日中両国の市場と技術に精通したエキスパートが、企業の持続可能な成長をサポートします。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>電力通信の標準化：</strong> 日中間における電力・スマートグリッド関連の技術基準の対比と適合支援。</li>
+                                <li><strong>日本市場進出支援：</strong> 中国企業向けの日本市場調査、パートナー探索、およびローカライズ戦略の策定。</li>
+                                <li><strong>経営戦略立案：</strong> 20年のキャリアに基づく、技術トレンドを予測した中長期的な経営アドバイス。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考料金：専門相談 10,000円〜 / 1時間</p>
+                        </div>
+                        
+                        <div class="cn-text lang-hidden text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>由深谙中日两国市场与技术的专家，支持企业的可持续增长。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>电力通信标准化：</strong> 提供中日间电力及智能电网相关技术标准的对比与合规支持。</li>
+                                <li><strong>日本市场进出支援：</strong> 为中国企业提供日本市场调研、渠道对接及本土化战略制定。</li>
+                                <li><strong>经营战略规划：</strong> 基于20年职场积淀，提供预判技术趋势的中长期经营建议。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考价格：专家咨询 10,000日元起 / 每小时</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="business-card">
+                <div class="flex flex-col md:flex-row md:items-start gap-8">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 jp-text text-slate-900">3. 資産運用管理・貿易コンサルティング</h4>
+                        <h4 class="text-2xl font-bold mb-4 cn-text lang-hidden text-slate-900">3. 资产运营管理与贸易咨询</h4>
+                        
+                        <div class="jp-text text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>日本国内の不動産や設備投資を通じた、企業の安定的な資産形成を支援します。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>投資最適化：</strong> 不動産管理、太陽光発電設備などのインフラ投資に関するコンサルティング。</li>
+                                <li><strong>貿易実務支援：</strong> 日中間における高品質な製品・設備の輸出入業務のアドバイザリー。</li>
+                                <li><strong>事業継承：</strong> 日本国内での事業承継やM&Aに関する戦略的サポート。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考料金：個別見積り（プロジェクト規模による）</p>
+                        </div>
+                        
+                        <div class="cn-text lang-hidden text-slate-600 text-sm leading-relaxed space-y-4">
+                            <p>通过日本国内的不动产及设备投资，协助企业实现稳健的资产积累。</p>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li><strong>投资优化：</strong> 针对不动产管理、光伏发电设备等基础设施投资提供专业咨询。</li>
+                                <li><strong>贸易实务支援：</strong> 中日间高质量产品与设备的进出口业务顾问服务。</li>
+                                <li><strong>事业继承：</strong> 提供日本国内的事业继承、并购（M&A）等战略性支持。</li>
+                            </ul>
+                            <p class="text-emerald-600 font-bold mt-4 border-l-4 border-emerald-600 pl-3 bg-emerald-50 py-2">参考价格：个案评估报价（根据项目规模）</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-slate-50 border-t border-slate-100 text-center">
+    <section class="py-24 bg-slate-900 text-white px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-2xl font-bold mb-12 text-center jp-text">会社概要</h3>
+            <h3 class="text-2xl font-bold mb-12 text-center cn-text lang-hidden">公司概要</h3>
+            <div class="grid grid-cols-1 gap-6 text-sm">
+                <div class="flex border-b border-white/10 pb-4 justify-between">
+                    <span class="text-slate-500 jp-text">商号</span><span class="text-slate-500 cn-text lang-hidden">商号</span>
+                    <span class="font-bold">西教信通株式会社</span>
+                </div>
+                <div class="flex border-b border-white/10 pb-4 justify-between">
+                    <span class="text-slate-500 jp-text">所在地</span><span class="text-slate-500 cn-text lang-hidden">地址</span>
+                    <span class="font-bold text-right text-xs">〒542-0067 大阪府大阪市中央区松屋町9-20<br>ローレルステート松屋町402A</span>
+                </div>
+                <div class="flex border-b border-white/10 pb-4 justify-between">
+                    <span class="text-slate-500 jp-text">代表者</span><span class="text-slate-500 cn-text lang-hidden">法人代表</span>
+                    <span class="font-bold">劉 琦</span>
+                </div>
+                <div class="flex border-b border-white/10 pb-4 justify-between">
+                    <span class="text-slate-500 jp-text">資本金</span><span class="text-slate-500 cn-text lang-hidden">资本金</span>
+                    <span class="font-bold">5,000,000円</span>
+                </div>
+                <div class="flex border-b border-white/10 pb-4 justify-between">
+                    <span class="text-slate-500 jp-text">主要取引銀行</span><span class="text-slate-500 cn-text lang-hidden">开户银行</span>
+                    <span class="font-bold">PayPay銀行（申請中）</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white text-center">
         <div class="flex justify-center space-x-6 mb-6 text-[10px] font-bold text-slate-400">
-            <button onclick="showTokusho()" class="hover:text-emerald-600 uppercase">特定商取引法に基づく表記</button>
+            <button onclick="document.getElementById('tokusho-modal').style.display='flex'" class="hover:text-emerald-600 transition uppercase">特定商取引法に基づく表記</button>
             <span>|</span>
-            <span class="uppercase tracking-widest">Saikyo ICT Co., Ltd.</span>
+            <a href="mailto:Saikyoict@outlook.com" class="hover:text-emerald-600 transition uppercase">Contact</a>
         </div>
-        <p class="text-[10px] text-slate-300">© 2025 西教信通株式会社 All rights reserved.</p>
+        <p class="text-[10px] text-slate-300">© 2025 西教信通株式会社 | Saikyo ICT Co., Ltd.</p>
     </footer>
 
-    <div id="tokusho-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] flex items-center justify-center p-6">
+    <div id="tokusho-modal" class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100] items-center justify-center p-6">
         <div class="bg-white p-8 rounded-3xl max-w-md w-full shadow-2xl">
             <h4 class="text-lg font-bold mb-6 border-b pb-2">特定商取引法に基づく表記</h4>
-            <div class="space-y-4 text-[10px] text-slate-600 leading-relaxed">
+            <div class="space-y-4 text-[10px] text-slate-600 leading-relaxed text-left">
                 <p><strong>販売業者：</strong> 西教信通株式会社</p>
                 <p><strong>代表責任者：</strong> 劉 琦</p>
-                <p><strong>所在地：</strong> 大阪府大阪市中央区松屋町9番20号</p>
+                <p><strong>所在地：</strong> 大阪府大阪市中央区松屋町9番20号 ローレルステート松屋町402A</p>
                 <p><strong>連絡先：</strong> 070-2267-7216 / Saikyoict@outlook.com</p>
-                <p><strong>販売価格：</strong> 各プロジェクトごとの見積りに基づく</p>
-                <p><strong>支払時期：</strong> 契約に基づき指定期日まで</p>
-                <p><strong>役務の提供時期：</strong> 契約後、個別に合意した期間内</p>
+                <p><strong>価格：</strong> 各プロジェクトごとの個別見積りに基づく</p>
+                <p><strong>支払方法：</strong> 銀行振込</p>
+                <p><strong>返品・キャンセル：</strong> サービスの性質上、契約後の返品は不可</p>
             </div>
-            <button onclick="closeTokusho()" class="mt-8 w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-xs">CLOSE</button>
+            <button onclick="document.getElementById('tokusho-modal').style.display='none'" class="mt-8 w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-xs">CLOSE</button>
         </div>
     </div>
 
@@ -199,15 +222,13 @@
             const btnJp = document.getElementById('btn-jp');
             const btnCn = document.getElementById('btn-cn');
             if(isCn) {
-                btnCn.className = "px-3 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700";
-                btnJp.className = "px-3 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400";
+                btnCn.className = "px-4 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700";
+                btnJp.className = "px-4 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400";
             } else {
-                btnJp.className = "px-3 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700";
-                btnCn.className = "px-3 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400";
+                btnJp.className = "px-4 py-1 text-[10px] font-bold rounded-full transition-all bg-white shadow-sm text-emerald-700";
+                btnCn.className = "px-4 py-1 text-[10px] font-bold rounded-full transition-all text-slate-400";
             }
         }
-        function showTokusho() { document.getElementById('tokusho-modal').classList.remove('hidden'); }
-        function closeTokusho() { document.getElementById('tokusho-modal').classList.add('hidden'); }
     </script>
 </body>
 </html>
