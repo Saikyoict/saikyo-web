@@ -10,6 +10,7 @@
     <style>
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
         .modal-content { background: white; margin: 10% auto; padding: 20px; width: 80%; max-width: 600px; border-radius: 8px; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -30,60 +31,68 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4 text-xs font-bold">
-                <button onclick="switchLang('jp')" id="btn-jp" class="text-blue-900 border-b-2 border-blue-900">日本語</button>
-                <button onclick="switchLang('cn')" id="btn-cn" class="text-gray-400">中文</button>
+                <button onclick="switchLang('jp')" id="btn-jp">日本語</button>
+                <button onclick="switchLang('cn')" id="btn-cn">中文</button>
             </div>
         </div>
     </header>
 
     <section class="bg-slate-900 text-white py-20 px-6">
         <div class="container mx-auto max-w-5xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">ICTで日中の架け橋となり、新たな価値を創造する。</h2>
-            <p class="text-sm opacity-80 leading-relaxed border-l-2 border-green-500 pl-4">
-                代表・劉 琦（北京郵電大学修士、元国家電網シニアエンジニア）の専門知見を活かし、高度な技術ソリューションを提供します。
-            </p>
+            <div class="jp-text">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">ICTで日中の架け桥となり、新たな価値を创造する。</h2>
+                <p class="text-sm opacity-80 leading-relaxed border-l-2 border-green-500 pl-4">代表・刘琦（北京邮电大学修士、元国家电网シニアエンジニア）の専門知見を活かし、高度な技術ソリューションを提供します。</p>
+            </div>
+            <div class="cn-text hidden">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">以ICT技术连接中日，创造全新价值。</h2>
+                <p class="text-sm opacity-80 leading-relaxed border-l-2 border-green-500 pl-4">代表・刘琦（北京邮电大学硕士、原国家电网高级工程师）凭借专业造诣，提供专家级技术解决方案。</p>
+            </div>
         </div>
     </section>
 
     <section class="py-16 container mx-auto px-6">
-        <h3 class="text-xl font-bold mb-10 border-b pb-2 text-blue-900">事業内容・サービス価格 (Service & Price)</h3>
+        <h3 class="text-xl font-bold mb-10 border-b pb-2 text-blue-900 jp-text">事業内容・サービス価格</h3>
+        <h3 class="text-xl font-bold mb-10 border-b pb-2 text-blue-900 cn-text hidden">业务内容与服务价格</h3>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                <h4 class="font-bold text-blue-800 mb-3">1. ICT・システム受託開発</h4>
-                <p class="text-xs text-gray-600 mb-4 leading-relaxed">中小企業向け在庫管理システム、越境ECプラットフォームの構築、デジタルツイン技術を活用した介護見守りシステムの開発支援。</p>
-                <p class="text-[11px] font-bold text-orange-600">参考料金：要件定義 15万円〜 / システム開発 50万円〜</p>
+                <h4 class="font-bold text-blue-800 mb-3 jp-text">1. ICT・システム受託開発</h4>
+                <h4 class="font-bold text-blue-800 mb-3 cn-text hidden">1. ICT系统定制开发</h4>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed jp-text">中小企業向け在庫管理システム、越境ECプラットフォームの構築、デジタルツイン技術を活用した介護見守りシステムの開発支援。</p>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed cn-text hidden">面向中小企业的库存管理系统、跨境电商平台构建、基于数字孪生技术的养老监护系统开发支持。</p>
+                <p class="text-[11px] font-bold text-orange-600 jp-text">参考料金：15万円〜</p>
+                <p class="text-[11px] font-bold text-orange-600 cn-text hidden">参考价格：15万日元起</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                <h4 class="font-bold text-blue-800 mb-3">2. 技術コンサルティング</h4>
-                <p class="text-xs text-gray-600 mb-4 leading-relaxed">電力通信標準化対応、特高圧・再エネ分野の日中技術対标、事業戦略立案支援。元国家電網の知見に基づく専門アドバイス。</p>
-                <p class="text-[11px] font-bold text-orange-600">参考料金：相談料 10,000円〜 / 1時間</p>
+                <h4 class="font-bold text-blue-800 mb-3 jp-text">2. 技術コンサルティング</h4>
+                <h4 class="font-bold text-blue-800 mb-3 cn-text hidden">2. 技术咨询服务</h4>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed jp-text">电力通信标准化対応、特高圧・再エネ分野の日中技術対标。元国家電網の知見に基づくアドバイス。</p>
+                <p class="text-xs text-gray-600 mb-4 leading-relaxed cn-text hidden">电力通信标准化对标、特高压及新能源领域的中日技术合作咨询。基于原国家电网背景的专业建议。</p>
+                <p class="text-[11px] font-bold text-orange-600 jp-text">参考料金：10,000円〜 / 1時間</p>
+                <p class="text-[11px] font-bold text-orange-600 cn-text hidden">参考价格：10,000日元起 / 小时</p>
             </div>
         </div>
     </section>
 
     <section class="py-16 bg-slate-100 px-6">
         <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-sm">
-            <h3 class="text-xl font-bold mb-8 text-center text-blue-900">会社概要 (Corporate Profile)</h3>
+            <h3 class="text-xl font-bold mb-8 text-center text-blue-900 jp-text">会社概要</h3>
+            <h3 class="text-xl font-bold mb-8 text-center text-blue-900 cn-text hidden">公司概要</h3>
             <table class="w-full text-xs leading-loose border-collapse">
-                <tr class="border-b"><th class="w-1/3 py-2 text-left text-gray-500">商号</th><td>西教信通株式会社</td></tr>
-                <tr class="border-b"><th class="py-2 text-left text-gray-500">所在地</th><td>〒542-0067 大阪府大阪市中央区松屋町9番20号<br>ローレルステート松屋町402A</td></tr>
-                <tr class="border-b"><th class="py-2 text-left text-gray-500">代表取締役</th><td>劉 琦</td></tr>
-                <tr class="border-b"><th class="py-2 text-left text-gray-500">資本金</th><td>5,000,000円</td></tr>
-                <tr class="border-b"><th class="py-2 text-left text-gray-500">設立</th><td>2025年（令和7年）5月</td></tr>
-                <tr class="border-b"><th class="py-2 text-left text-gray-500">事業内容</th><td>ICTシステム開発、電力通信技術コンサルティング、資産運用管理</td></tr>
+                <tr class="border-b"><th class="w-1/3 py-2 text-left text-gray-500 jp-text">商号</th><th class="w-1/3 py-2 text-left text-gray-500 cn-text hidden">商号</th><td>西教信通株式会社</td></tr>
+                <tr class="border-b"><th class="py-2 text-left text-gray-500 jp-text">所在地</th><th class="py-2 text-left text-gray-500 cn-text hidden">地址</th><td>〒542-0067 大阪府大阪市中央区松屋町9番20号<br>ローレルステート松屋町402A</td></tr>
+                <tr class="border-b"><th class="py-2 text-left text-gray-500 jp-text">代表取締役</th><th class="py-2 text-left text-gray-500 cn-text hidden">法人代表</th><td>劉 琦</td></tr>
+                <tr class="border-b"><th class="py-2 text-left text-gray-500 jp-text">資本金</th><th class="py-2 text-left text-gray-500 cn-text hidden">资本金</th><td>5,000,000円</td></tr>
+                <tr class="border-b"><th class="py-2 text-left text-gray-500 jp-text">設立</th><th class="py-2 text-left text-gray-500 cn-text hidden">成立时间</th><td>2025年（令和7年）5月</td></tr>
             </table>
         </div>
     </section>
 
-    <footer class="py-12 bg-white border-t">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center space-x-6 mb-6 text-[10px] text-blue-700">
-                <a href="#" onclick="document.getElementById('tokusho-modal').style.display='block'">特定商取引法に基づく表記</a>
-                <a href="mailto:Saikyoict@outlook.com">Contact Us</a>
-            </div>
-            <p class="text-[10px] text-gray-400 mb-2">Tel: 070-2267-7216 | Email: Saikyoict@outlook.com</p>
-            <p class="text-[10px] text-gray-400">© 2025 西教信通株式会社 All rights reserved.</p>
+    <footer class="py-12 bg-white border-t text-center">
+        <div class="flex justify-center space-x-6 mb-6 text-[10px] text-blue-700">
+            <a href="#" onclick="document.getElementById('tokusho-modal').style.display='block'">特定商取引法に基づく表記</a>
         </div>
+        <p class="text-[10px] text-gray-400 mb-2">Tel: 070-2267-7216 | Email: Saikyoict@outlook.com</p>
+        <p class="text-[10px] text-gray-400">© 2025 西教信通株式会社 All rights reserved.</p>
     </footer>
 
     <div id="tokusho-modal" class="modal" onclick="this.style.display='none'">
@@ -94,10 +103,6 @@
             <p><strong>所在地：</strong> 大阪府大阪市中央区松屋町9番20号 ローレルステート松屋町402A</p>
             <p><strong>電話番号：</strong> 070-2267-7216</p>
             <p><strong>メール：</strong> Saikyoict@outlook.com</p>
-            <p><strong>販売価格：</strong> 各サービス紹介ページに記載の通り</p>
-            <p><strong>支払方法：</strong> 銀行振込、クレジットカード決済（予定）</p>
-            <p><strong>支払期限：</strong> 請求書発行後、指定期日まで</p>
-            <p><strong>引渡時期：</strong> 契約締結後、個別合意のスケジュールに基づき提供</p>
             <button class="mt-4 bg-blue-900 text-white px-4 py-1 rounded" onclick="document.getElementById('tokusho-modal').style.display='none'">閉じる</button>
         </div>
     </div>
