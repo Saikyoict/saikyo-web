@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
-        .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .hidden { display: none !important; }
+        .modal-content { background: white; margin: 10% auto; padding: 25px; width: 90%; max-width: 600px; border-radius: 12px; }
+        /* 默认状态下不隐藏，确保内容可见 */
+        .hidden-lang { display: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-['Noto_Sans_JP']">
@@ -26,17 +27,109 @@
                     </svg>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-blue-900 leading-none">西教信通株式会社</h1>
-                    <p class="text-[9px] tracking-widest text-gray-400 mt-1 uppercase">Saikyo ICT Co., Ltd.</p>
+                    <h1 class="text-xl font-bold text-blue-900">西教信通株式会社</h1>
+                    <p class="text-[9px] text-gray-400 uppercase">Saikyo ICT Co., Ltd.</p>
                 </div>
             </div>
             <div class="flex items-center space-x-4 text-xs font-bold">
-                <button onclick="switchLang('jp')" id="btn-jp">日本語</button>
-                <button onclick="switchLang('cn')" id="btn-cn">中文</button>
+                <button onclick="switchLang('jp')" id="btn-jp" class="text-blue-900 border-b-2 border-blue-900">日本語</button>
+                <button onclick="switchLang('cn')" id="btn-cn" class="text-gray-400">中文</button>
             </div>
         </div>
     </header>
 
-    <section class="bg-slate-900 text-white py-20 px-6">
+    <section class="bg-slate-900 text-white py-16 px-6">
         <div class="container mx-auto max-w-5xl">
-            <div class="jp-text">
+            <div class="lang-section jp-content">
+                <h2 class="text-3xl font-bold mb-4">ICTで日中の架け橋となり、新たな価値を創造する。</h2>
+                <p class="text-sm opacity-80 border-l-2 border-green-500 pl-4">代表・劉 琦の専門知見を活かし、高度な技術ソリューションを提供します。</p>
+            </div>
+            <div class="lang-section cn-content hidden-lang">
+                <h2 class="text-3xl font-bold mb-4">以ICT技术连接中日，创造全新价值。</h2>
+                <p class="text-sm opacity-80 border-l-2 border-green-500 pl-4">凭借代表·刘琦的专业背景，提供专家级技术解决方案。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 container mx-auto px-6">
+        <h3 class="text-xl font-bold mb-8 text-blue-900 border-b pb-2">
+            <span class="jp-content">事業内容・価格体系</span>
+            <span class="cn-content hidden-lang">业务内容与价格体系</span>
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded shadow-sm border">
+                <h4 class="font-bold text-blue-800 mb-2">
+                    <span class="jp-content">1. ICT受託開発</span>
+                    <span class="cn-content hidden-lang">1. ICT定制开发</span>
+                </h4>
+                <p class="text-xs text-gray-600 mb-4">
+                    <span class="jp-content">在庫管理システム、ECサイト構築等。参考価格：50万円〜</span>
+                    <span class="cn-content hidden-lang">库存管理、电商构建等。参考价格：50万日元起</span>
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded shadow-sm border">
+                <h4 class="font-bold text-blue-800 mb-2">
+                    <span class="jp-content">2. 技術コンサルティング</span>
+                    <span class="cn-content hidden-lang">2. 技术咨询</span>
+                </h4>
+                <p class="text-xs text-gray-600 mb-4">
+                    <span class="jp-content">電力通信技術対比等。参考価格：1万円〜 / 1時間</span>
+                    <span class="cn-content hidden-lang">电力通信技术对标等。参考价格：1万日元起 / 小时</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-100 px-6">
+        <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-sm">
+            <h3 class="text-xl font-bold mb-6 text-center text-blue-900">Company Profile</h3>
+            <table class="w-full text-xs leading-loose">
+                <tr class="border-b"><th class="w-1/3 text-left text-gray-500">商号</th><td>西教信通株式会社</td></tr>
+                <tr class="border-b"><th class="text-left text-gray-500">所在地</th><td>〒542-0067 大阪府大阪市中央区松屋町9番20号<br>ローレルステート松屋町402A</td></tr>
+                <tr class="border-b"><th class="text-left text-gray-500">代表取締役</th><td>劉 琦</td></tr>
+                <tr class="border-b"><th class="text-left text-gray-500">資本金</th><td>5,000,000円</td></tr>
+                <tr class="border-b"><th class="text-left text-gray-500">連絡先</th><td>Saikyoict@outlook.com</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white text-center">
+        <div class="text-[10px] text-blue-700 mb-4">
+            <a href="javascript:void(0)" onclick="document.getElementById('tokusho-modal').style.display='block'">特定商取引法に基づく表記</a>
+        </div>
+        <p class="text-[10px] text-gray-400">© 2025 西教信通株式会社 All rights reserved.</p>
+    </footer>
+
+    <div id="tokusho-modal" class="modal" onclick="this.style.display='none'">
+        <div class="modal-content text-[11px]" onclick="event.stopPropagation()">
+            <h3 class="font-bold mb-4 border-b pb-2">特定商取引法に基づく表記</h3>
+            <p><strong>販売業者：</strong> 西教信通株式会社</p>
+            <p><strong>運営責任者：</strong> 劉 琦</p>
+            <p><strong>所在地：</strong> 大阪府大阪市中央区松屋町9番20号 ローレルステート松屋町402A</p>
+            <p><strong>電話番号：</strong> 070-2267-7216</p>
+            <button class="mt-4 w-full bg-blue-900 text-white py-2 rounded" onclick="document.getElementById('tokusho-modal').style.display='none'">閉じる</button>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            const jpElements = document.querySelectorAll('.jp-content');
+            const cnElements = document.querySelectorAll('.cn-content');
+            const btnJp = document.getElementById('btn-jp');
+            const btnCn = document.getElementById('btn-cn');
+
+            if (lang === 'cn') {
+                jpElements.forEach(el => el.classList.add('hidden-lang'));
+                cnElements.forEach(el => el.classList.remove('hidden-lang'));
+                btnCn.className = "text-blue-900 border-b-2 border-blue-900";
+                btnJp.className = "text-gray-400";
+            } else {
+                cnElements.forEach(el => el.classList.add('hidden-lang'));
+                jpElements.forEach(el => el.classList.remove('hidden-lang'));
+                btnJp.className = "text-blue-900 border-b-2 border-blue-900";
+                btnCn.className = "text-gray-400";
+            }
+        }
+    </script>
+</body>
+</html>
