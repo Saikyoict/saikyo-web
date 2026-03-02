@@ -10,6 +10,8 @@
         body { font-family: 'Inter', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f1f5f9; font-size: 14px; }
         .lang-hidden { display: none !important; }
         .hero-gradient { background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%); }
+        
+        /* 统一卡片 */
         .uniform-card { 
             background: rgba(255, 255, 255, 0.98); 
             border-radius: 12px; 
@@ -18,8 +20,10 @@
             color: #0f172a;
             height: 100%;
         }
+        
         .section-title { position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 24px; font-weight: 700; color: #ffffff; }
         .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 35px; height: 3px; background: #10b981; border-radius: 2px; }
+        
         .fee-tag { 
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
             font-size: 10px; 
@@ -31,9 +35,10 @@
             display: inline-block;
             margin-top: 16px;
         }
-        /* 修复按钮样式，确保切换后大小不变 */
-        .btn-active { background-color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05); color: #059669; }
-        .btn-inactive { color: #94a3b8; }
+
+        /* 预定义按钮样式，确保切换时不改变字号 */
+        .lang-btn-active { background-color: white; box-shadow: 0 1px 2px rgba(0,0,0,0.05); color: #059669; }
+        .lang-btn-inactive { color: #94a3b8; }
     </style>
 </head>
 <body class="antialiased">
@@ -52,9 +57,9 @@
                     <p class="text-[10px] tracking-[0.15em] text-slate-400 uppercase font-bold mt-1">Saikyo ICT Co., Ltd.</p>
                 </div>
             </div>
-            <div class="flex bg-slate-100 rounded-full p-1">
-                <button id="btn-jp" onclick="setLang('jp')" class="px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-active">日本語</button>
-                <button id="btn-cn" onclick="setLang('cn')" class="px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-inactive">中文</button>
+            <div class="flex bg-slate-100 rounded-full p-1 shadow-inner">
+                <button id="btn-jp" onclick="setLang('jp')" class="px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-active">日本語</button>
+                <button id="btn-cn" onclick="setLang('cn')" class="px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-inactive">中文</button>
             </div>
         </div>
     </header>
@@ -63,7 +68,7 @@
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-2xl md:text-5xl font-bold mb-6 leading-tight tracking-tight jp-text">ICT技術と社会共生で、<br><span class="text-emerald-400">次世代のインフラ</span>を拓く。</h2>
             <h2 class="text-2xl md:text-5xl font-bold mb-6 leading-tight tracking-tight cn-text lang-hidden">以ICT技术与社会共生，<br><span class="text-emerald-400">拓宽下一代基础设施</span>。</h2>
-            <p class="text-slate-400 text-xs md:text-base font-light px-4 jp-text">北京郵電大学修士・元国家電網シニアエンジニアとしての20年の歩みを礎に、専門的な技術コンサルティングを通じて、持続可能な社会の実現に貢献します。</p>
+            <p class="text-slate-400 text-xs md:text-base font-light px-4 jp-text">北京郵電大学修士・元国家電網シニアエンジニアとしての20年の歩みを礎に、専門的な技術コンサルティング、社会プロジェクト、そして未来への投資を通じて、持续可能な社会の実現に貢献します。</p>
             <p class="text-slate-400 text-xs md:text-base font-light px-4 cn-text lang-hidden">基于北京邮电大学硕士及原国家电网高级工程师20年的专业积淀，西教信通通过专家级技术咨询、人文关怀项目及战略性投资，致力于实现社会的可持续发展。</p>
         </div>
     </section>
@@ -79,76 +84,108 @@
                     <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">工程技术咨询</h4>
                     <p class="text-[12px] leading-relaxed text-slate-600 jp-text">代表の保有する発明特許と国家電網での実績に基づき、中日両国の企業に電力通信ネットワーク設計やシステム最適化案を提供します。</p>
                     <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">依托创始人拥有的发明专利及国家电网项目经验，为中日两国企业提供电力通信网络设计及系统优化方案。</p>
-                    <div class="fee-tag">Consulting: 10,000 JPY / Hr~</div>
+                    <div class="fee-tag">Consulting: 20,000 JPY / Hr~</div>
                 </div>
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-2 jp-text">技術交流と伝播</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">技术交流与传播</h4>
-                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">中国電機工程学会シニア会員として、中日間の技術者交流や電力通信分野の専門知識の伝播を促進します。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">中国電機工程学会シニア会員としての立場を活かし、中日間の技術者交流や電力通信分野の専門知識の伝播を促進します。</p>
                     <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">利用中国电力工程学会高级会员身份，促进中日电力行业技术交流及专业领域的技术传播。</p>
                     <div class="fee-tag">Seminar Fee: 100,000 JPY~</div>
                 </div>
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-2 jp-text">標準研究と審査</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">标准研究与评审</h4>
-                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">電力通信規格やプロジェクト審査の豊富な経験を背景に、技術標準の策定や第三者審査に貢献します。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">国内外の電力通信規格やプロジェクト審査の豊富な経験を背景に、技術標準の策定・評価や第三者審査に貢献します。</p>
                     <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">凭借在电力通信标准制定及项目评审方面的深厚背景，提供标准对标与第三方技术评审服务。</p>
-                    <div class="fee-tag">Report Fee: 200,000 JPY~</div>
+                    <div class="fee-tag">Report Fee: 500,000 JPY~</div>
                 </div>
             </div>
         </div>
 
         <div>
-            <h3 class="text-lg section-title jp-text">2. 次世代ソーシャル・プラットフォーム（重点開発事業）</h3>
-            <h3 class="text-lg section-title cn-text lang-hidden">2. 下一代社会福祉平台（重点开发业务）</h3>
+            <h3 class="text-lg section-title jp-text">2. 日中芸術文化交流コンサルティング</h3>
+            <h3 class="text-lg section-title cn-text lang-hidden">2. 中日美术交流咨询服务</h3>
+            <div class="mb-6 px-4 py-3 bg-white/5 border-l-4 border-emerald-500 rounded">
+                <p class="text-[12px] leading-relaxed text-slate-400 jp-text">北京市西城区芸術家協会理事である創業者影響力と信頼を活かし、日中両国の美術界を繋ぐ高度なコンサルティングを提供します。</p>
+                <p class="text-[12px] leading-relaxed text-slate-400 cn-text lang-hidden">依托公司创始人北京市西城区美术家协会理事的身份与行业公信力，为中日两国艺术界提供高水平咨询服务。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="uniform-card">
+                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">学術交流展・画廊提携</h4>
+                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">学术交流展与画廊对接</h4>
+                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">日中両国の公式・民間展示ルートを開拓。日本人アーティストの中国進出等を支援します。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">打通双边官方与民间展览渠道。协助日本艺术家进入中国市场，或协助中国艺术家在日发展。</p>
+                    <div class="fee-tag">Consulting: 300,000 JPY~</div>
+                </div>
+                <div class="uniform-card">
+                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">教育機関交流・セミナー</h4>
+                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">美术培训机构交流研讨</h4>
+                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">日中双方の美術教育機関間の交流・研習会を企画。教育カリキュラムの共有を推進します。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">策划对中日双方美术培训机构的交流和研讨。通过分享教育大纲提升跨国教学水平。</p>
+                    <div class="fee-tag">Seminar Fee: 150,000 JPY~</div>
+                </div>
+                <div class="uniform-card">
+                    <h4 class="font-bold text-emerald-700 mb-2 jp-text">IPライセンス・コラボ</h4>
+                    <h4 class="font-bold text-emerald-700 mb-2 cn-text lang-hidden">艺术IP授权与跨界联名</h4>
+                    <p class="text-[12px] leading-relaxed text-slate-600 jp-text">中国の伝統芸術（非遺）と日本の商業ブランドの融合を推進。ライセンス仲介を行います。</p>
+                    <p class="text-[12px] leading-relaxed text-slate-600 cn-text lang-hidden">推动中国传统艺术（非遗）与日本商业品牌的融合。提供全案IP授权仲介服务。</p>
+                    <div class="fee-tag">Commission: 10% - 20%</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-lg section-title jp-text">3. 次世代ソーシャル・プラットフォーム</h3>
+            <h3 class="text-lg section-title cn-text lang-hidden">3. 下一代社会福祉平台</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] jp-text">地域拠点開設支援</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] cn-text lang-hidden">区域中心扶持与加盟</h4>
-                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">独自の感性インタラクションモデルに基づく拠点開設を全面的に支援する初期導入パッケージです。</p>
-                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">基于独特的感性交互模型，为合作伙伴提供区域站点设立的全面支持与初期导入服务。</p>
-                    <div class="fee-tag">Initial Fee: 300,000 JPY</div>
+                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">独自の感性インタラクションモデルに基づく拠点開設を全面的に支援します。</p>
+                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">基于独特的感性交互模型，为合作伙伴提供区域站点设立的全面启动支持。</p>
+                    <div class="fee-tag">Initial Fee: 8,000,000 JPY</div>
                 </div>
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] jp-text">認証ライセンス</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] cn-text lang-hidden">管理授权与许可</h4>
-                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">専門スタッフの認証維持、および管理システムの継続利用ライセンスを提供します。</p>
-                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">提供专业人员资质维护及云端管理系统的持续授权，确保服务流程标准化。</p>
-                    <div class="fee-tag">Monthly License: 50,000 JPY / Mo</div>
+                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">専門スタッフの認証維持、および管理システムの継続利用ライセンスです。</p>
+                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">提供专业人员资质维护及云端客户管理系统的持续授权。</p>
+                    <div class="fee-tag">Monthly: 200,000 JPY / Mo</div>
                 </div>
                 <div class="uniform-card">
-                    <h4 class="font-bold text-emerald-700 mb-2 text-[13px] jp-text">四半期データ解析</h4>
+                    <h4 class="font-bold text-emerald-700 mb-2 text-[13px] jp-text">データ解析支援</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] cn-text lang-hidden">季度数据分析指导</h4>
-                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">蓄積されたデータを解析し、アルゴリズムによる最適化アドバイスを四半期ごとに提供します。</p>
-                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">通过对积累的数据进行算法挖掘，每季度为合作方提供运营优化建议与分析报告。</p>
-                    <div class="fee-tag">Quarterly Analysis: 150,000 JPY</div>
+                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">蓄積されたデータを解析し、最適化アドバイスを四半期ごとに提供します。</p>
+                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">通过对积累的行为数据进行算法挖掘，每季度提供运营优化建议。</p>
+                    <div class="fee-tag">Quarterly: 500,000 JPY</div>
                 </div>
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] jp-text">公共セクター向け評価</h4>
                     <h4 class="font-bold text-emerald-700 mb-2 text-[13px] cn-text lang-hidden">公共部门决策评估</h4>
-                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">行政機関等に対し、デジタルツインを活用した広域社会福祉の課題分析報告を提供します。</p>
-                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">利用数字孪生技术，为政府及机构提供跨区域的社会福利课题分析及预测模型。</p>
+                    <p class="text-[11px] leading-relaxed text-slate-600 jp-text">行政や専門機関に対し、課題分析と予測モデルを提供します。</p>
+                    <p class="text-[11px] leading-relaxed text-slate-600 cn-text lang-hidden">利用数字孪生技术，为政府及专业机构提供社会福利课题分析预测。</p>
                     <div class="fee-tag">Fee: Quotation Based</div>
                 </div>
             </div>
         </div>
 
         <div>
-            <h3 class="text-lg section-title jp-text">3. 戦略的投資と人材育成</h3>
-            <h3 class="text-lg section-title cn-text lang-hidden">3. 战略性投资与人才培养</h3>
+            <h3 class="text-lg section-title jp-text">4. 戦略的投資と人材育成</h3>
+            <h3 class="text-lg section-title cn-text lang-hidden">4. 战略性投资与人才培养</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-3 jp-text">優良資産への投資</h4>
                     <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">优良资产投资</h4>
-                    <p class="text-[12px] text-slate-600 jp-text">国内外の優良資産（インフラ、エネルギー、不動産等）に対し、専門的知見を持って資産配置を行っています。</p>
-                    <p class="text-[12px] text-slate-600 cn-text lang-hidden">对国内外优质资产（基础设施、能源、不动产等）持有专业兴趣，并提供战略性资产配置服务。</p>
+                    <p class="text-[12px] text-slate-600 jp-text">国内外の優良資産に対し、専門的知見を持って資産配置を行っています。</p>
+                    <p class="text-[12px] text-slate-600 cn-text lang-hidden">对国内外优质资产持有浓厚的专业兴趣，并提供战略性资产配置服务。</p>
                     <div class="fee-tag">Asset Management: Quotation Based</div>
                 </div>
                 <div class="uniform-card">
                     <h4 class="font-bold text-emerald-700 mb-3 jp-text">多分野の人材育成</h4>
                     <h4 class="font-bold text-emerald-700 mb-3 cn-text lang-hidden">多领域人才培养</h4>
-                    <p class="text-[12px] text-slate-600 jp-text">電力通信技術および社会課題解決に精通した専門人材の育成を支援。次世代の技術者を育成します。</p>
-                    <p class="text-[12px] text-slate-600 cn-text lang-hidden">培养支撑下一代基础设施的专业人才，提供定制化的人才培养方案与实务指导。</p>
+                    <p class="text-[12px] text-slate-600 jp-text">次世代インフラを支える技術者やスペシャリストを育成します。</p>
+                    <p class="text-[12px] text-slate-600 cn-text lang-hidden">培养支撑下一代基础设施的专业人才，提供定制化培养方案。</p>
                     <div class="fee-tag">Training: By Individual Estimate</div>
                 </div>
             </div>
@@ -157,14 +194,14 @@
 
     <footer class="py-12 bg-slate-950 border-t border-white/5 text-center">
         <div class="container mx-auto px-6 max-w-lg">
-            <div class="space-y-1.5 text-[12px] text-slate-500 font-light mb-8">
+            <div class="space-y-2 text-[12px] text-slate-500 font-light mb-8">
                 <p class="text-slate-300 font-bold mb-2 text-sm">西教信通株式会社 (SAIKYO ICT CO., LTD.)</p>
                 <p>〒542-0067 大阪府大阪市中央区松屋町9-20-402A</p>
                 <p>代表取締役：劉 琦 | 資本金：5,000,000円</p>
                 <p class="font-mono mt-2 text-emerald-500/80">Contact: Saikyoict@outlook.com</p>
             </div>
             <p class="text-[9px] text-slate-800 font-mono mb-4 uppercase tracking-widest">© 2026 SAIKYO ICT CO., LTD. ALL RIGHTS RESERVED.</p>
-            <button onclick="document.getElementById('tokusho').style.display='flex'" class="text-[10px] text-slate-600 underline underline-offset-2 hover:text-slate-400">特定商取引法に基づく表記</button>
+            <button onclick="document.getElementById('tokusho').style.display='flex'" class="text-[10px] text-slate-600 underline underline-offset-2">特定商取引法に基づく表記</button>
         </div>
     </footer>
 
@@ -174,7 +211,7 @@
             <div class="space-y-2 text-[9px] text-slate-500">
                 <p><strong>販売業者：</strong> 西教信通株式会社</p>
                 <p><strong>所在地：</strong> 大阪府大阪市中央区松屋町9番20号</p>
-                <p><strong>価格：</strong> 個別見積りによる</p>
+                <p><strong>価格：</strong> 個别見積りによる</p>
                 <p><strong>支払方法：</strong> 銀行振込</p>
             </div>
             <button onclick="document.getElementById('tokusho').style.display='none'" class="mt-6 w-full bg-slate-800 text-white py-2 rounded text-[9px]">CLOSE</button>
@@ -184,20 +221,20 @@
     <script>
         function setLang(lang) {
             const isCn = lang === 'cn';
-            // 切换文本
+            // 切换语言文本
             document.querySelectorAll('.jp-text').forEach(el => el.classList.toggle('lang-hidden', isCn));
             document.querySelectorAll('.cn-text').forEach(el => el.classList.toggle('lang-hidden', !isCn));
             
-            // 切换按钮样式（修复字号变小问题）
+            // 修复切换逻辑：使用预定义的 CSS 类，确保字号锁死在 12px
             const btnJp = document.getElementById('btn-jp');
             const btnCn = document.getElementById('btn-cn');
             
             if (isCn) {
-                btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-inactive";
-                btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-active";
+                btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-inactive";
+                btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-active";
             } else {
-                btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-active";
-                btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all btn-inactive";
+                btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-active";
+                btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-inactive";
             }
         }
     </script>
