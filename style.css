@@ -19,7 +19,7 @@ body {
     background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
 }
 
-/* 统一高级暗色科技质感卡片（彻底解决旧版高亮刺眼及字体隐形问题） */
+/* 统一高级暗色科技质感卡片 */
 .uniform-card { 
     background: rgba(30, 41, 59, 0.45);
     backdrop-blur: 12px;
