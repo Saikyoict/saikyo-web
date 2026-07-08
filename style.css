@@ -1,36 +1,88 @@
 /* style.css */
+
+/* 核心基础背景设置 */
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
     scroll-behavior: smooth;
+    background-color: #0f172a;
+    color: #f1f5f9;
+    font-size: 14px;
 }
 
+/* 隐藏切换语言的非当前文本 */
 .lang-hidden {
-    display: none;
+    display: none !important;
 }
 
-.tech-gradient {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+/* 渐变流光背景 */
+.hero-gradient {
+    background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
 }
 
-.vision-card {
-    transition: all 0.3s ease;
+/* 统一高级暗色科技质感卡片（彻底解决旧版高亮刺眼及字体隐形问题） */
+.uniform-card { 
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-blur: 12px;
+    border-radius: 12px; 
+    padding: 24px; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
     height: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.vision-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+/* 微小动效：悬停时微微上浮与翡翠绿边框亮化 */
+.uniform-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.5);
 }
 
-.lang-btn {
-    font-size: 0.875rem;
+/* 区域小标题左侧装饰条 */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
     font-weight: 700;
-    color: #94a3b8;
-    padding-bottom: 2px;
+    color: #ffffff;
 }
 
-.lang-btn.active {
-    color: #1e3a8a;
-    border-bottom: 2px solid #1e3a8a;
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 3px;
+    background: #10b981;
+    border-radius: 2px;
+}
+
+/* 价格与费用标签（包含强制不换行逻辑） */
+.fee-tag { 
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
+    font-size: 10px; 
+    color: #34d399; 
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 16px;
+    white-space: nowrap; /* 核心修复：防止小屏和PDF导出时价格由于空间收缩被迫断行 */
+}
+
+/* 预定义语言按钮激活态/非激活态 */
+.lang-btn-active {
+    background-color: #10b981;
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.lang-btn-inactive {
+    color: #64748b !important;
+}
+.lang-btn-inactive:hover {
+    color: #94a3b8 !important;
 }
