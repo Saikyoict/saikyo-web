@@ -1,29 +1,35 @@
+/**
+ * 跨语言核心控制系统
+ * @param {string} lang - 'jp' 或 'cn'
+ */
 function switchLang(lang) {
-    const jpTexts = document.querySelectorAll('.jp-text');
-    const cnTexts = document.querySelectorAll('.cn-text');
+    const isCn = lang === 'cn';
+    
+    // 1. 批量切换文本显示状态
+    document.querySelectorAll('.jp-text').forEach(el => {
+        if (isCn) el.classList.add('lang-hidden');
+        else el.classList.remove('lang-hidden');
+    });
+    
+    document.querySelectorAll('.cn-text').forEach(el => {
+        if (isCn) el.classList.remove('lang-hidden');
+        else el.classList.add('lang-hidden');
+    });
+    
+    // 2. 精准调度顶部控制条按钮高亮样式（锁死字号与内边距，拒绝多余抖动）
     const btnJp = document.getElementById('btn-jp');
     const btnCn = document.getElementById('btn-cn');
-
-    if (lang === 'cn') {
-        // 显示中文，隐藏日语
-        jpTexts.forEach(el => el.classList.add('hidden'));
-        cnTexts.forEach(el => el.classList.remove('hidden', 'lang-hidden'));
-        // 切换按钮样式
-        btnCn.classList.add('text-blue-900', 'border-b-2', 'border-blue-900');
-        btnCn.classList.remove('text-gray-400');
-        btnJp.classList.remove('text-blue-900', 'border-b-2', 'border-blue-900');
-        btnJp.classList.add('text-gray-400');
+    
+    if (isCn) {
+        btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-inactive";
+        btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-active";
     } else {
-        // 显示日语，隐藏中文
-        cnTexts.forEach(el => el.classList.add('hidden'));
-        jpTexts.forEach(el => el.classList.remove('hidden', 'lang-hidden'));
-        // 切换按钮样式
-        btnJp.classList.add('text-blue-900', 'border-b-2', 'border-blue-900');
-        btnJp.classList.remove('text-gray-400');
-        btnCn.classList.remove('text-blue-900', 'border-b-2', 'border-blue-900');
-        btnCn.classList.add('text-gray-400');
+        btnJp.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-active";
+        btnCn.className = "px-4 py-1.5 text-[12px] font-bold rounded-full transition-all lang-btn-inactive";
     }
 }
 
-// 页面加载时默认为日语
-window.onload = () => switchLang('jp');
+// 3. 页面初始化自动锚定默认语言为：日语
+window.addEventListener('DOMContentLoaded', () => {
+    switchLang('jp');
+});
